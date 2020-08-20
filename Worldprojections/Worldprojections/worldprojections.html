@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projections</title>
+</head>
+<body>
+    <h1>In this project I learned how to display images in different projections</h1>
+    
+    <h2 style="color:red">Describe in your own words how you displayed the map in different projections using QGIS</h2>
+    <p>I first uploaded the unaltered vector from the assignment's data folder to QGIS. I then used the indicatrix to add the map indicators. I clicked the map projection feature in the lower right corner and changed the projection to whichever one I was working on at the time. I would then take the new, altered map and place it on a print layout, add a text box to write the projection name and ID, and save it as a .PNG file.</p>
+    
+    <h2>WGS84 Projection</h2>
+    <h3>Interesting how this map maintains uniform distance in latitude and longitude, but sacrifices shape. It's easy to read, with the bulk of the distortion coming near the poles.</h3>
+    <a href=".//maps/4326.png">
+    <img src=".//maps/4326.png" alt="WGS84" width='500px'>
+    </a>
+    <h2>Aitoff Projection</h2>
+    <h3>This projection has the equator and prime meridian with no curvature. The distortion in the map occurs as one looks further away from these geogeaphic markers, with the "corners" of the map being the most distorted.</h3>
+    <a href=".//maps/54043.png">
+    <img src=".//maps/54043.png" alt="Aitoff" width='500px'>
+    </a>
+    <h2>North Pole Azimuthal</h2>
+    <h3>This map projects the earth from a "top-down" perspective, with the North Pole resting at the center. The maps distort as it goes further from the center, but maintains distance and area with each concentric circle around the center point.</h3>
+    <a href="./Homework 2 North Pole Azimuthal.png">
+    <img src="./Homework 2 North Pole Azimuthal.png" alt="North Azimuthal" width='500px'>
+    </a>
+    <h2>Pseudo Mercator</h2>
+    <h3>This projection is similar to the WGS84 projection in that it maintains straight lines for latitude and longitude. It additionally maintains shape more than the WGS84, but sacrifices size in kind.</h3>
+    <a href="./Homework 2 Pseudo Mercator.png">
+    <img src="./Homework 2 Pseudo Mercator.png" alt="Pseudo" width='500px'>
+    </a>
+    <h2>South Pole Azimuthal</h2>
+    <h3>I chose to look at this projection because all of the "pole-centered" projections I've seen have the North Pole at its center, and I want to look at the opposite perspective. Much like the North Pole Azimuthal projection, this map distorts in circles around the center pole point, with the only difference between the orientating pole.</h3>
+    <a href="./Homework 2 South Pole Azimuthal.png">
+    <img src="./Homework 2 South Pole Azimuthal.png" alt="South Azimuthal" width='500px'>
+    </a>
+    <h2>Sphere Loximuthal</h2>
+    <h3>Much like the Aitoff projection, the equator and prime meridian have no curvature. This map distorts area, shape, distances, and direction as one travels further from the equator-prime meridian intersection.</h3>
+    <a href="./Homework 2 Sphere Luximuthal.png">
+    <img src="./Homework 2 Sphere Luximuthal.png" alt="Luximuthal" width='500px'>
+    </a>
+    <h2>Sphere Winkel I</h2>
+    <h3>This projection shares many similarities to the Sphere Loximuthal projection in that it has the equator-prime meridian intersection of straight lines and that it distors size, area, shape, and generally distance. Unlike the Loximuthal, this map has uniform distortion on opposing latitudes (ex. 30 degrees N & S have the same distortion, but reflected across the equatorial line).</h3>
+    <a href="./Homework 2 Sphere Winkel.png">
+    <img src="./Homework 2 Sphere Winkel.png" alt="Winkel" width='500px'>
+    </a>
+    <h2>World Cylindrical Equal Area</h2>
+    <h3>This projection gives the Earth as if it was squeezed through a cylinder across the side, unlike the traditional cylindrical projection that cross from pole to pole. Size, area, and shape remain uniform across a latitude, while distorting distance.</h3>
+    <a href="./Homework 2 World Cylindrical.png">
+    <img src="./Homework 2 World Cylindrical.png" alt="Cylindrical" width='500px'>
+    </a>
+    <h2>World Equidistant Conic</h2>
+    <h3>This projection shares many elements with the Azimuthal projection in that in presents a circular image that increasingly distorts as the indicators move away from the center. It differs in that a large "pie slice" of blank space is present, representing the "conic" feature of this projection, whereas the Azimuthal created a complete circle. By doing so, the azimuthal sacrificed more distance by stretching the edges of the conic projection to meet.</h3>
+    <a href="./Homework 2 World Equidistant Conic.png">
+    <img src="./Homework 2 World Equidistant Conic.png" alt="Conic" width='500px'>
+    </a>
+    <h2 style="color:red">Now, you should <u>add the following projections on your own:</u></h2>
+    <h3>EPSG: 3857, 53018, 54034, 54027, 102016, and two additional projections that you choose.</h3>
+    <p></p>
+    <h2>Data used for this project</h2>
+    <a href="https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip"> Download Natrual Earth 1:10m Cultural Vector </a>
+</body>
+</html>
