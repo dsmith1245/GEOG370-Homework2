@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Map</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+
+   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+
+</head>
+<body>
+
+    <div id="mapid"></div>
+    <style>
+        #mapid{ width: 900px; height: 500px;}
+    </style>
+
+    <script>
+        var map = L.map('mapid').setView([35.91, -79.05], 17);
+        L.tileLayer('https://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png', {}).addTo(map)
+        var lenoirIcon = L.icon({
+            iconUrl: 'https://unchistory.web.unc.edu/files/2017/11/lenoir-hall.jpg',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+        });
+        L.marker([35.9106, -79.0487], {icon: lenoirIcon}).addTo(map)
+            .bindPopup('Lenoir Hall <br/> <img width = 100px src="http://navigatingfoodatunc.web.unc.edu/files/2015/10/final-Paper-Capture-1.jpg" />')
+            .openPopup();
+
+        var wilsonIcon = L.icon({
+            iconUrl: 'https://library.unc.edu/wp-content/uploads/2019/08/wilson2.jpg',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+        });
+        L.marker([35.9094, -79.0497], {icon:wilsonIcon}).addTo(map)
+            .bindPopup('Wilson Library <br/> <img width = 100px src="https://upload.wikimedia.org/wikipedia/commons/9/98/Wilson_Library%2C_Second_Floor_Reading_Room%2C_center.jpg" />')
+            .openPopup();
+        
+        var davisIcon = L.icon({
+            iconUrl: 'https://library.unc.edu/wp-content/uploads/2019/08/davis.jpg',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+        });
+        L.marker([35.9110, -79.0481], {icon:davisIcon}).addTo(map)
+            .bindPopup('Davis Library <br/> <img width = 100px src="https://library.unc.edu/wp-content/uploads/2020/04/stonecenter-zoom-background-scaled.jpg" />')
+            .openPopup();
+
+    </script>
+
+    
+</body>
+</html>
