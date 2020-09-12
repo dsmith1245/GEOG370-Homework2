@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet Preview</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+  <style type="text/css">
+    body {
+       margin: 0;
+       padding: 0;
+    }
+    html, body, #map{
+       width: 100%;
+       height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+      var map = L.map('map').setView([35.314062164293496, -81.51852927794462], 14.0);
+      
+      var churchIcon = L.icon({
+          iconUrl: 'https://www.ebcgreenville.com/wp-content/uploads/2018/02/Message-Icon.png',
+          iconSize: [50,50],
+          popupAnchor: [0,0]
+      })
+
+      var churchMarker = L.marker([35.29138889, -81.53916667], {churchIcon})
+            .bindPopup('First Baptist Church <br/> <img width = 100px src="https://blueridgeimpressions.files.wordpress.com/2015/02/bell-tower.jpg" />')
+            .openPopup();
+
+      var libraryIcon = L.icon({
+          iconUrl: 'https://www.eriereader.com/image/scale/auto/auto/articles/563717_liz-allen-library-aisle.jpg',
+          iconSize: [50,50],
+          popupAnchor: [0,0]
+      })
+
+      var libraryMarker = L.marker([35.292620, -81.556130], {libraryIcon})
+            .bindPopup('Cleveland County Memoiral Library <br/> <img width = 100px src="https://ccml.org/ccml/wp-content/uploads/2018/08/DSCN1171-e1534171775115-1024x630.jpg" />')
+            .openPopup();
+
+      var policeIcon = L.icon({
+          iconUrl: 'https://previews.123rf.com/images/ariadnas/ariadnas1611/ariadnas161100128/65961821-isolate-round-icon-on-white-background-with-police-officer-man-of-police-force-standing-full-face-in.jpg',
+          iconSize: [50,50],
+          popupAnchor: [0,0]
+      })
+
+      var policeMarker = L.marker([35.291230, -81.541500], {policeIcon})
+            .bindPopup('Shelby Police Department <br/> <img width = 100px src="https://cdn.britannica.com/67/98467-004-49FEECE0/Officers-New-York-City-Police-Department-transportation.jpg" />')
+            .openPopup();
+      
+      var OSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	    maxZoom: 19,
+	    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+      
+      var daPhoto = L.tileLayer('./tiles/{z}/{x}/{y}.png', {
+        minZoom: 12,
+        maxZoom: 16,
+        tms: false,
+        attribution: 'USGS'
+      })
+
+      var daTiles = {
+          "Open Street Map": OSM,
+          "Shelby Photo": daPhoto
+      }
+
+      var daVectors = {
+          "First Baptist Church":churchMarker,
+          "Shelby Library":libraryMarker,
+          "Shelby Police":policeMarker
+      }
+
+      L.control.layers(daTiles, daVectors).addTo(map);
+  </script>
+</body>
+</html>
