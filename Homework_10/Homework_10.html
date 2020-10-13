@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Davis Homework 10</title>
+    </head>
+    <body>
+        <h1>Homework 10: Geoprocessing Analysis</h1>
+        <h2>Davis Smith</h2>
+        <h3>For this project, I asked the question "What areas of counties with many impoverished individuals are not near hospitals?" I asked this question for a few reasons. This topic allowed me to get easily manipulable data. It also resulted in some interesting visual information. I also didn't see that one of the tutorial videos involved hospitals in point layers, so I wanted to do something extra to go beyond the scope of that tutorial and show creativity.</h3>
+        <a href="Homework_10_1.png">
+            <img src="Homework_10_1.png" alt="Homework_10_1" width="500px">
+        </a>
+        <h3>I started with a chloropleth map of North Carolina counties. I joined this county map with a census csv sheet that detailed poverty numbers per North Carolina county. I used a natural break classification and I used a ratio that divided the number of impoverished individuals per county by the total North Carolina population. Since I didn't normalize the data, population density still affects the results.</h3>
+        <a href="Homework_10_2.png">
+            <img src="Homework_10_2.png" alt="Homework_10_2" width="500px">
+        </a>
+        <h3>I then selected the counties that had a value higher than .68% and saved that as a seperate layer. I also added the North Carolina hospital point layer.</h3>
+        <a href="Homework_10_3.png">
+            <img src="Homework_10_3.png" alt="Homework_10_3" width="500px">
+        </a>
+        <h3>I then found the intersection of North Carolina hospitals and the isolated county layer. I added a buffer of 10 miles around the intersecting hospitals afterwards. I did 10 miles because of a study I found while researching for this project that showed how, for every roughly 5 miles increase in distance from a hospital, the chance of death turning transportation in an anbulence increases by 1%. I doubled the distance for visual interest.</h3>
+        <a href="Homework_10_4.png">
+            <img src="Homework_10_4.png" alt="Homework_10_4" width="500px">
+        </a>
+        <h3>I used the difference geoprocessor to highlight the areas of the isolated counties outside of this 10 mile radius.</h3>
+        <a href="Homework_10_5.png">
+            <img src="Homework_10_5.png" alt="Homework_10_5" width="500px">
+        </a>
+        <h3>Lastly, I displayed only the difference layer to show the exact area where hospitals are outside of a 10 mile range.</h3>
+        <p></p>
+        <h2>Data used for this project</h2>
+        <a href="https://dsmith1245.github.io/GEOG370-Homework2/Homework_10/Hospitals.shp">NC Hospital Point Layer</a>
+        <p></p>
+        <a href="https://www.nconemap.gov/datasets/0b5a8fe009144b9bbeb7c4cee9ab7fa9_0">Website for NC Hospital Point Layer</a>
+        <p></p>
+        <a href="https://dsmith1245.github.io/GEOG370-Homework2/Homework_10/ACSST5Y2018.S1701_data_with_overlays_2020-10-13T121148_modified.csv">Cleaned csv dataset</a>
+        <p></p>
+        <a href="https://dsmith1245.github.io/GEOG370-Homework2/Homework_10/ACSST5Y2018.S1701_data_with_overlays_2020-10-13T121148.csv">Original csv dataset</a>
+        <p></p>
+        <a href="https://data.census.gov/cedsci/table?t=Official%20Poverty%20Measure%3APoverty&g=0400000US37.050000&tid=ACSST1Y2019.S1701&hidePreview=false">Website for csv dataset</a>
+        <p></p>
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2464671/">Website for study on emergency response-distance risk</a>
+    </body>
+</html>
